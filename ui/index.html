@@ -1,21 +1,55 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Voting App</title>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Aadhaar-Voting | Login</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+        <link href="css/animate.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body class="gray-bg">
+        <div class="middle-box text-center loginscreen animated fadeInDown">
+            <div>
+                <div>
+                    <h1 class="logo-name"><img src="images/e-voting-logo.png" width="150"></h1>
+                </div>
+                <h3>Welcome to Aadhaar-Voting</h3>
+                
+                
+                <form class="m-t" role="form" method="post" action="/login">
+                    <div class="form-group">
+                         <input type="text" id="username" name="username" class="form-control" placeholder="Username" required autofocus>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                    </div>
+                    <button type="" id="login" class="btn btn-primary block full-width m-b login">Login</button>
+                    
+                </form>
+                <br>
+            </div>
+        </div>
+        <div class="footer">
+            <ul class="class   copy-right">
+                <div>
+                  <p align="center">Made with <i class="fa fa-heart" style="color:red;"></i> by Techdot</p>
+                </div>
+                
+               
+            </ul>
+            
+        </div>
+        <!-- Mainly scripts -->
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script> 
 
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.8/angular-material.min.css">
-</head>
-<body>
-<md-toolbar md-scroll-shrink>
-    <div class="md-toolbar-tools">My Messages</div>
-  </md-toolbar>
+  <script type="text/javascript" src="js/login.js"></script>
+    </body>
 
-  <md-content style="height: 600px;" md-theme="altTheme">
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
-<script type="text/javascript" src="js/main.js"></script>
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.8/angular-material.min.js"></script>
-</body>
+  
 </html>
