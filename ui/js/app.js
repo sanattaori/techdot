@@ -81,8 +81,14 @@ $(verifyotp).click(function(){
         // User signed in successfully.
         var user = result.user;
         window.verifyingCode = false;
-        console.log(user);
-        
+        //login success
+        console.log(user.uid);
+        var d = new Date();
+    	d.setTime(d.getTime() + (1*24*60*60*1000));      
+    	var expires = "expires="+ d.toUTCString();
+    	document.cookie = 'show' + "=" + user.uid + ";" + expires + ";path=/";
+    	window.location = '/info'
+
       }).catch(function (error) {
         // User couldn't sign in (bad verification code?)
         console.error('Error while checking the verification code', error);

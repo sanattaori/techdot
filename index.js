@@ -56,11 +56,40 @@ app.get('/',function(req,res){
 
 app.get('/app', function(req, res){
 	var cookie_pass = req.cookies['auth'];
-	if (passwordHash.verify('password', cookie_pass)) {
+	var cookie_otp = req.cookies['show'];
+
+	if (passwordHash.verify('password', cookie_pass) && cookie_otp != null) {
+		res.sendFile(path.join(__dirname, 'ui', 'info.html'));
+		
+
+	} else if (cookie_otp == null || cookie_otp == '') {
 		res.sendFile(path.join(__dirname, 'ui', 'app.html'));
-	} else {
+	}
+	else {
 		res.redirect('/');
 	}
+	
+});
+
+app.get('/info', function(req, res){
+	var cookie_pass = req.cookies['auth'];
+	var cookie_otp = req.cookies['show'];
+	if (cookie_pass == null || cookie_pass == '' || cookie_otp == null || cookie_otp == '') {
+		res.redirect('/app');
+	} else {
+		res.sendFile(path.join(__dirname, 'ui', 'info.html'));
+	}
+	
+});
+
+app.get('/clist', function(req, res){
+	// var cookie_pass = req.cookies['auth'];
+	// var cookie_otp = req.cookies['show'];
+	// if (cookie_pass == null || cookie_pass == '' || cookie_otp == null || cookie_otp == '') {
+	// 	res.redirect('/app');
+	// } else {
+		res.sendFile(path.join(__dirname, 'ui', 'clist.html'));
+	// }
 	
 });
 
