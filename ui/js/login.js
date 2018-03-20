@@ -1,4 +1,19 @@
 $(document).ready(function () {
+	var cookie = readCookie('auth');
+	if (cookie != null) {
+		window.location = "/app";
+	}
+	//check cookie
+	function readCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+	}
 
 	//error hide
 	$(messagebox).hide()
@@ -23,9 +38,14 @@ $(document).ready(function () {
 					"password": $('#password').val(),
 				}),
 				success: function (data) {
+					console.log(data.message);
 					$(messagebox).show()
 					$(errormsg).text('Redirecting...')
-					res.redirect('/app');
+					var d = new Date();
+				    d.setTime(d.getTime() + (1*24*60*60*100));
+				    var expires = "expires="+ d.toUTCString();
+				    document.cookie = 'auth' + "=" + data.message + ";" + expires + ";path=/";
+				    window.location = '/app';
 				},
 				statusCode: {
 			        500: function() {
