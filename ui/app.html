@@ -9,6 +9,20 @@
         <link href="css/animate.css" rel="stylesheet">
         <link href="css/style.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+        <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+        <script>
+          // Initialize Firebase
+          var config = {
+            apiKey: "AIzaSyD8S8A9XZRU3UAvjenDjm-xdBKmn1NOSR0",
+            authDomain: "voting-3eed6.firebaseapp.com",
+            databaseURL: "https://voting-3eed6.firebaseio.com",
+            projectId: "voting-3eed6",
+            storageBucket: "voting-3eed6.appspot.com",
+            messagingSenderId: "376658495838"
+          };
+          firebase.initializeApp(config);
+        </script>
     </head>
     <body class="gray-bg">
         <div class="middle-box text-center loginscreen animated fadeInDown">
@@ -17,25 +31,39 @@
                     <h1 class="logo-name"><img src="images/e-voting-logo.png" width="150"></h1>
                 </div>
                 <h3>Verify Aadhaar</h3>
-                
-                
-                <div class="m-t" role="form" action="#"  >
+                <div class="m-t" id="verify_otp_model" role="form" action="#"  >
                     <div class="form-group">
-                         <input type="text" id="username" name="username" class="form-control" placeholder="Username" required autofocus>
+                         <input onkeypress="return isNumberKey(event)" id="verify_otp" name="aadhaarno" class="form-control" placeholder="Enter OTP" required autofocus>
                     </div>
+                   
+                    <button id="verifyotp" class="btn btn-primary block full-width m-b login">Verify OTP</button>
+                    
+                </div>
+                
+                <div class="m-t" id="enter_aadhaarno" role="form" action="#"  >
                     <div class="form-group">
-                        <input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
+                         <input onkeypress="return isNumberKey(event)" id="aadhaar_no" name="aadhaarno" class="form-control" placeholder="Aadhaar No" required autofocus>
                     </div>
-                    <button id="login" class="btn btn-primary block full-width m-b login">Login</button>
+                   
+                    <button id="getotp" class="btn btn-primary block full-width m-b login">Get OTP</button>
                     
                 </div>
                 <br>
-                <div id="messagebox" class="alert alert-danger fade in">
-				    <a href="" class="close" data-dismiss="alert">&times;</a>
-				    <strong id="errormsg">Error!</strong> 
-				</div>
+                                <div id="errorbox" class="alert alert-danger fade in">
+            <a href="#" class="close" data-dismiss="alert">&times;</a>
+            <strong id="error">Error!</strong>
+            </div>
+
             </div>
         </div>
+
+<!--         <label for="recaptcha-invisible">
+                <input type="radio" id="recaptcha-invisible" name="recaptcha" value="invisible">
+                Invisible
+        </label> -->
+
+
+
         <div class="footer">
             <ul class="class   copy-right">
                 <div>
