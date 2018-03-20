@@ -19,17 +19,21 @@
                 <h3>Welcome to Aadhaar-Voting</h3>
                 
                 
-                <form class="m-t" role="form" method="post" action="/login">
+                <div class="m-t" role="form" action="#"  >
                     <div class="form-group">
                          <input type="text" id="username" name="username" class="form-control" placeholder="Username" required autofocus>
                     </div>
                     <div class="form-group">
-                        <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                        <input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
                     </div>
-                    <button type="" id="login" class="btn btn-primary block full-width m-b login">Login</button>
+                    <button id="login" class="btn btn-primary block full-width m-b login">Login</button>
                     
-                </form>
+                </div>
                 <br>
+                <div id="messagebox" class="alert alert-danger fade in">
+				    <a href="" class="close" data-dismiss="alert">&times;</a>
+				    <strong id="errormsg">Error!</strong> 
+				</div>
             </div>
         </div>
         <div class="footer">
