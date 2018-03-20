@@ -6,11 +6,15 @@ var passwordHash = require('password-hash');
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var request = require('request');
-
+var fs = require('fs');
+Web3 = require('web3')
+solc = require('solc')
 var app = express();
 app.use( bodyParser.json() )
 app.use(cookieParser());
 app.use(morgan('combined'));
+
+
 
 
 app.use("/", express.static("ui"));
@@ -59,10 +63,11 @@ app.get('/app', function(req, res){
 	var cookie_otp = req.cookies['show'];
 
 	if (passwordHash.verify('password', cookie_pass) && cookie_otp != null) {
-		res.sendFile(path.join(__dirname, 'ui', 'clist.html'));
+		//res.sendFile(path.join(__dirname, 'ui', 'clist.html'));
+		res.redirect('/info');
 		
 
-	} else if (cookie_otp == null || cookie_otp == '') {
+	} else if (cookie_otp == null && passwordHash.verify('password', cookie_pass)) {
 		res.sendFile(path.join(__dirname, 'ui', 'app.html'));
 	}
 	else {
@@ -71,12 +76,27 @@ app.get('/app', function(req, res){
 	
 });
 
+// app.post('/getaddress',function(req,res){
+
+// });
+
 app.get('/info', function(req, res){
 	var cookie_pass = req.cookies['auth'];
 	var cookie_otp = req.cookies['show'];
 	if (cookie_pass == null || cookie_pass == '' || cookie_otp == null || cookie_otp == '') {
 		res.redirect('/app');
 	} else {
+		web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+		 code = fs.readFileSync('Voting.sol').toString()
+
+		 compiledCode = solc.compile(code)
+		 abiDefinition = JSON.parse(compiledCode.contracts[':Voting'].interface)
+		 VotingContract = web3.eth.contract(abiDefinition)
+		 byteCode = compiledCode.contracts[':Voting'].bytecode
+		 deployedContract = VotingContract.new(['Sanat','Aniket','Mandar','Akshay'],{data: byteCode, from: web3.eth.accounts[0], gas: 4700000})
+		
+		contractInstance = VotingContract.at(deployedContract.address)
+
 		res.sendFile(path.join(__dirname, 'ui', 'clist.html'));
 	}
 	
