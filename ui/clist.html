@@ -41,12 +41,18 @@
            </div>
         </nav>
     </man>
+    
 <main>
 <bodyt >
 
 	
 
-  <div style="padding-left: 250px; padding-right: 250px; font-size: 40;">
+  <div class="container">
+   <div id="card-alert" class="card light-blue lighten-5">
+                      <div class="card-content light-blue-text">
+                        <p id="loc_info">NEWS : You have done 5 actions.</p>
+                      </div>
+                    </div>
   <table>
     <h1>
   	
@@ -64,62 +70,33 @@
           	
           	<td><img src="images/bjp.png" alt=" "height="42" width="42"></td>
           	<td>Bharatiya Janata Party</td>
-            <td>Sanat Taori</td>
-            <td style=" background-color:  #4527a0;
-   	border: none;
-   	color: white;
-  	padding: 20px;
-  	text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;">vote</td>
+            <td id="cand1">Sanat Taori</td>
+            <td ><button id="vote1" class="btn waves-effect waves-light" type="submit" name="action">Vote
+  </button></td>
           </tr>
           <tr>
             <td><img src="images/cong.png" alt=" "height="42" width="42"></td>
             <td>Indian National Congress</td>
-            <td>Aniket Narkhede</td>
-            <td style=" background-color:  #4527a0;
-   	border: none;
-   	color: white;
-  	padding: 20px;
-  	text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;">vote</td>
+            <td id="cand2">Aniket Narkhede</td>
+            <td><button id="vote2"  class="btn waves-effect waves-light" type="submit" name="action">Vote
+    
+  </button></td>
           </tr>
           <tr>
             <td><img src="images/rsc.png" alt=" "height="42" width="42"></td>
             <td>Nationalist Congress Party</td>
-            <td>Mandar Patil</td>
-            <td style=" background-color: #4527a0; 
-   	border: none;
-   	color: white;
-  	padding: 20px;
-  	text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;">Vote</td>
+            <td id="cand3">Mandar Patil</td>
+            <td><button id="vote3"  class="btn waves-effect waves-light" type="submit" name="action">Vote
+    
+  </button></td>
           </tr>
           <tr>
             <td><img src="images/shiv.png" alt=" "height="42" width="42"></td>
              <td>Shiv Sena</td>
-            <td>Akshay Motghare</td>
-            <td style=" background-color: #4527a0;
-   	border: none;
-   	color: white;
-  	padding: 20px;
-  	text-align: center; 
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;">Vote</td>
+            <td id="cand4">Akshay Motghare</td>
+            <td><button id="vote4" class="btn waves-effect waves-light" type="submit" name="action">Vote
+    
+  </button></td>
           </tr>
       </h1>
     </table>
@@ -133,6 +110,10 @@
               <div class="brand-logo center">made with <i class="fa fa-heart" style="color:red;"></i> by techdot</div>
         </div>
         </footer>
+        <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script> 
       
-
-       
+<script type="text/javascript" src="js/clist.js"></script>
+</html>

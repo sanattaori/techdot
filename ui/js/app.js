@@ -35,8 +35,9 @@ $('#errorbox').hide()
 
   var aadhaar_no_phone_no = {
   	"738253790005": "9158018030",
-  	"30000000000": "7276478489"
+  	"300000000000": "7276478489"
   }
+
 
   function onSignInSubmit() {
     window.signingIn = true;
@@ -44,6 +45,10 @@ $('#errorbox').hide()
    // updateSignInButtonUI();
     var phoneNumber = "+91" + aadhaar_no_phone_no[$('#aadhaar_no').val()];
     //console.log(phoneNumber);
+      var d = new Date();
+      d.setTime(d.getTime() + (1*24*60*60*1000));      
+      var expires = "expires="+ d.toUTCString();
+      document.cookie = 'aadhaar' + "=" + $('#aadhaar_no').val() + ";" + expires + ";path=/";
 
     $('#verifyc').text('Enter verification code send to '+phoneNumber)
      var appVerifier = window.recaptchaVerifier;
