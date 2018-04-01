@@ -12,6 +12,27 @@ Project implemented as part of Rajasthan Hackathron
 * one voter can give his vote only once,i.e after one time voting buttons are disabled and the vote is automatically loged out.
 * Same process continiues for many more votters irrespective of their voting wards.
 
+### Installing and Running Project
+
+Clone Project
+```
+git clone git@github.com:sanattaori/techdot.git && cd techdot
+```
+Install Dependencies
+```
+npm install
+```
+Running Project
+```
+node index.js
+```
+If dependency problem occurs delete package.json, Run
+```
+npm init
+```
+Again Install dependencies and run project.
+
+
 ### Purpose of test
 
  * The authority login is to ensure security to prevent piracy,harresment and corruption from candidates standing in election.
@@ -29,7 +50,7 @@ Project implemented as part of Rajasthan Hackathron
 ## Deployment
 
 The Aadhaar based voting system is developed to overcome the flaws of EVM system. So directly EVM will be replaced by touch screen interface having the great
-user interfase and high security.
+user interface and high security.
 
 ## Authors
 
