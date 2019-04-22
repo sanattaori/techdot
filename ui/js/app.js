@@ -34,8 +34,9 @@ $('#errorbox').hide()
     });
 
   var aadhaar_no_phone_no = {
-  	"738253790005": "9158018030",
-  	"300000000000": "7276478489"
+  	"7382537xxxxx": "915801xxxx",
+  	"300000000000": "7276xxxxxx",
+	"<replace your aadhaar no here>": "<your phone number>",
   }
 
 
