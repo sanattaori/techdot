@@ -46,6 +46,12 @@ Step 2 - Creating Voting Smart Contract
 ```
 npm install solc
 ```
+
+Replace your aadhaar no and phone number for running project at https://github.com/sanattaori/techdot/blob/7814403250f8b042992c6d437d9f9db8f98f3729/ui/js/app.js#L39
+
+Step 3 - Testing in node console
+
+Not required just for testing in node console-
 After writing our smart contract, we'll use Web3js to deploy our app and interact with it
 ```
 $ node
@@ -75,7 +81,7 @@ compiledCode.contracts[‘:Voting’].interface: interface of the contract (call
 > contractInstance = VotingContract.at(deployedContract.address)
 deployedContract.address. When you have to interact with your contract, you need this deployed address and abi definition we talked about earlier.
 ```
-Step 3 - Interacting with the Contract via the Nodejs Console
+Step 4 - Interacting with the Contract via the Nodejs Console
 ```
 > contractInstance.totalVotesFor.call('Sanat').toLocaleString()
 '2'
