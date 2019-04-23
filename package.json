@@ -5,7 +5,6 @@
   "main": "index.js",
   "dependencies": {
     "express": "^4.16.3",
-    "materialize-css": "^0.100.2",
     "morgan": "^1.9.0",
     "password-hash": "^1.2.2"
   },
