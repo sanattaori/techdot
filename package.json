@@ -4,9 +4,13 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "cookie-parser": "^1.4.5",
     "express": "^4.16.3",
-    "morgan": "^1.9.0",
-    "password-hash": "^1.2.2"
+    "morgan": "^1.10.0",
+    "password-hash": "^1.2.2",
+    "request": "^2.88.2",
+    "solc": "^0.4.11",
+    "web3": "^0.19.1"
   },
   "devDependencies": {},
   "scripts": {
